@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_trinity_speciality,trinity.speciality,model_trinity_speciality,,1,1,1,1
+access_doctor_speciality,doctor.speciality,model_doctor_speciality,,1,1,1,1
+access_qualification_code,qualification.code,model_qualification_code,,1,1,1,1

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--    Examination Purpose Records    -->
+
+        <record id="examination_purpose_01" model="examination.purpose">
+            <field name="name">1</field>
+        </record>
+        <record id="examination_purpose_02" model="examination.purpose">
+            <field name="name">2</field>
+        </record>
+        <record id="examination_purpose_03" model="examination.purpose">
+            <field name="name">3</field>
+        </record>
+
+        <!--    Examination Type Records    -->
+
+        <record id="examination_type_electrophysiology" model="examination.type">
+            <field name="name">Electrophysiology</field>
+        </record>
+        <record id="examination_type_examination" model="examination.type">
+            <field name="name">Examination</field>
+        </record>
+        <record id="examination_type_eeg" model="examination.type">
+            <field name="name">EEG</field>
+        </record>
+
+        <!--    Examination Cost Records    -->
+
+        <record id="examination_cost" model="examination.cost">
+            <field name="cost">0</field>
+        </record>
+
+    </data>
+</odoo>

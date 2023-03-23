@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+
+<odoo>
+    <data>
+        <record id="doctor_speciality_neurosurgery" model="doctor.speciality">
+            <field name="name">Neurosurgery</field>
+        </record>
+        <record id="doctor_speciality_neurology" model="doctor.speciality">
+            <field name="name">Neurology</field>
+        </record>
+        <record id="doctor_speciality_cardiology" model="doctor.speciality">
+            <field name="name">Cardiology</field>
+        </record>
+        <record id="qualification_code_01" model="qualification.code">
+            <field name="name">01</field>
+        </record>
+        <record id="qualification_code_02" model="qualification.code">
+            <field name="name">02</field>
+        </record>
+        <record id="qualification_code_03" model="qualification.code">
+            <field name="name">03</field>
+        </record>
+    </data>
+</odoo>

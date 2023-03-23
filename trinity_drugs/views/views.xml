@@ -1,0 +1,100 @@
+<odoo>
+    <data>
+
+        <!-- List Views -->
+
+        <record model="ir.ui.view" id="view_trinity_drug_tree">
+            <field name="name">trinity.drug.tree</field>
+            <field name="model">trinity.drug</field>
+            <field name="arch" type="xml">
+                <tree limit="100" sample="1">
+                    <field name="permit_number" decoration-bf="1"/>
+                    <field name="key"/>
+                    <field name="inn_code"/>
+                    <field name="atc_code"/>
+                    <field name="permit_owner"/>
+                    <field name="package"/>
+                    <field name="amount_active"/>
+                    <field name="measurement_unit_id" decoration-bf="1"/>
+                    <field name="medical_form_id" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form Views -->
+
+        <record model="ir.ui.view" id="view_trinity_drug_form">
+            <field name="name">trinity.drug.form</field>
+            <field name="model">trinity.drug</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                Drug
+                            </h1>
+                        </div>
+                        <br/>
+                        <group>
+                            <group>
+                                <field name="key"/>
+                                <field name="permit_number"/>
+                                <field name="inn_code"/>
+                                <field name="atc_code"/>
+                                <field name="permit_owner"/>
+                                <field name="package"/>
+                                <field name="amount_active"/>
+                                <field name="measurement_unit_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}" selection="True"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="medical_form_id"/>
+                                <field name="medicinal_form_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}" selection="True"/>
+                                <field name="application_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}" selection="True"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search Views -->
+
+        <record model="ir.ui.view" id="view_trinity_drug_search">
+            <field name="name">trinity.drug.search</field>
+            <field name="model">trinity.drug</field>
+            <field name="arch" type="xml">
+                <search string="Drug">
+                    <field name="permit_number"/>
+                    <field name="key"/>
+                    <field name="inn_code"/>
+                    <field name="atc_code"/>
+                    <field name="permit_owner"/>
+                    <field name="package"/>
+                    <field name="amount_active"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- Actions to Return Model Views -->
+
+        <record model="ir.actions.act_window" id="action_trinity_drug">
+            <field name="name">Drugs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">trinity.drug</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create Your First Drug.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu Items -->
+
+        <menuitem name="Drugs" id="menu_drug" sequence="10" action="action_trinity_drug"/>
+
+    </data>
+</odoo>

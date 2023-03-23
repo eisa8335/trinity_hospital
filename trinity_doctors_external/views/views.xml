@@ -1,0 +1,145 @@
+<odoo>
+    <data>
+
+        <!-- List Views -->
+
+        <record model="ir.ui.view" id="view_trinity_doctor_external_tree">
+            <field name="name">trinity.doctor.external.tree</field>
+            <field name="model">trinity.doctor.external</field>
+            <field name="arch" type="xml">
+                <tree limit="100" sample="1">
+                    <field name="doctor_id" decoration-bf="1" string="Doctor ID"/>
+                    <field name="first_name" string="First Name"/>
+                    <field name="last_name" string="Last Name"/>
+                    <field name="birth_date" string="Birth Date"/>
+                    <field name="phone" string="Phone No"/>
+                    <field name="email" string="Email"/>
+                    <field name="gender" string="Gender"/>
+                    <field name="speciality_id" optional="show"/>
+                    <field name="qualification_code_id" optional="show" decoration-bf="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form Views -->
+
+        <record model="ir.ui.view" id="view_trinity_doctor_external_form">
+            <field name="name">trinity.doctor.external.form</field>
+            <field name="model">trinity.doctor.external</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                Doctor
+                            </h1>
+                        </div>
+                        <br/>
+                        <group>
+                            <group>
+                                <field name="title"/>
+                                <label for="first_name"/>
+                                <div name="name_div" class="d-flex">
+                                    <field name="first_name" placeholder="First"/>
+                                    <span class="oe_inline o_form_label mx-3"/>
+                                    <field name="middle_name" placeholder="Middle"/>
+                                    <span class="oe_inline o_form_label mx-3"/>
+                                    <field name="last_name" placeholder="Last"/>
+                                </div>
+                                <field name="email" widget="email"/>
+                                <field name="phone" widget="phone"/>
+                            </group>
+                        </group>
+                        <br/>
+                        <br/>
+                        <group>
+                            <group>
+                                <label for="address_line" string="Address"/>
+                                <div class="o_address_format">
+                                    <field name="address_line" placeholder="Address Line 1" class="o_address_street"/>
+                                    <field name="address_line2" placeholder="Address Line 2" class="o_address_street"/>
+                                    <field name="city" placeholder="City" class="o_address_city"/>
+                                    <field name="state_id" class="o_address_state"
+                                           placeholder="State / Province / Region"/>
+                                    <field name="zip_code" placeholder="Postal / Zip Code" class="o_address_zip"/>
+                                    <field name="country_id" placeholder="Country" class="o_address_country"/>
+                                </div>
+                            </group>
+                        </group>
+                        <br/>
+                        <br/>
+                        <group>
+                            <group>
+                                <field name="identifier_type"/>
+                                <field name="identifier"/>
+                                <field name="hospital_no"/>
+                                <field name="birth_date"/>
+                                <field name="gender"/>
+                            </group>
+                            <group>
+                                <field name="doctor_id"/>
+                                <field name="speciality_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}" selection="True"/>
+                                <field name="qualification_code_id" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}" selection="True"/>
+                            </group>
+                        </group>
+                        <br/>
+                        <group>
+                            <field name="attach" filename="attach_char" string="Medical Doctor Diploma"/>
+                            <field name="attach_char" invisible="1"/>
+                            <field name="attach1" filename="attach_char1" string="Spetialty Diploma"/>
+                            <field name="attach_char1" invisible="1"/>
+                            <field name="attach2" filename="attach_char2"
+                                   string="Medical Association Membership Certificate"/>
+                            <field name="attach_char2" invisible="1"/>
+                            <field name="attach3" filename="attach_char3" string="Contract Trinity MC"/>
+                            <field name="attach_char3" invisible="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search Views -->
+
+        <record model="ir.ui.view" id="view_trinity_doctor_external_search">
+            <field name="name">trinity.doctor.external.search</field>
+            <field name="model">trinity.doctor.external</field>
+            <field name="arch" type="xml">
+                <search string="Doctor">
+                    <field name="first_name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="identifier"/>
+                    <field name="qualification_code_id"/>
+                    <separator/>
+                    <filter name="male" string="Male" domain="[('gender','=','male')]"/>
+                    <group expand="1" string="Group By">
+                        <filter name="gender" string="Gender" context="{'group_by':'gender'}"/>
+                        <filter name="identifier_type" string="Identifier Type" context="{'group_by':'identifier_type'}"/>
+                        <filter name="speciality_id" context="{'group_by':'speciality_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Actions to Return Model Views -->
+
+        <record model="ir.actions.act_window" id="action_trinity_doctor_external">
+            <field name="name">Doctors</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">trinity.doctor.external</field>
+            <field name="view_mode">tree,form,pivot,graph</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create Your First Doctor.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu Items -->
+
+        <menuitem name="Doctors External" id="menu_doctor_external" sequence="11" action="action_trinity_doctor_external"/>
+
+    </data>
+</odoo>

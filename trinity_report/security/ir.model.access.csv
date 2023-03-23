@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_trinity_report,trinity.report,model_trinity_report,,1,1,1,1
+access_examination_purpose,examination.purpose,model_examination_purpose,,1,1,1,1
+access_examination_type,examination.type,model_examination_type,,1,1,1,1
+access_examination_cost,examination.cost,model_examination_cost,,1,1,1,1

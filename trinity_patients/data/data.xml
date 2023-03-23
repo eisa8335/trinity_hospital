@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+
+<odoo>
+    <data>
+        <record id="health_region_none" model="health.region">
+            <field name="name">None</field>
+        </record>
+    </data>
+</odoo>

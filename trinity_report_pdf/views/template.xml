@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <report
+            id="trinity_report_id"
+            model="trinity.report"
+            name="trinity_report_pdf.print_report"
+            file="trinity_report_pdf.print_report"
+            report_type="qweb-pdf"
+            string="Report PDF"
+            menu="True"/>
+
+    </data>
+</odoo>

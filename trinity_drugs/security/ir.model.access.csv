@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_trinity_drug,trinity.drug,model_trinity_drug,,1,1,1,1
+access_measurement_unit,measurement.unit,model_measurement_unit,,1,1,1,1
+access_medicinal_form,medicinal.form,model_medicinal_form,,1,1,1,1
+access_application_form,application.form,model_application_form,,1,1,1,1

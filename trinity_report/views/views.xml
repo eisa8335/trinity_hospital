@@ -1,0 +1,236 @@
+<odoo>
+    <data>
+
+        <!-- List Views -->
+
+        <record model="ir.ui.view" id="view_trinity_report_tree">
+            <field name="name">trinity.report.tree</field>
+            <field name="model">trinity.report</field>
+            <field name="arch" type="xml">
+                <tree limit="100" sample="1">
+                    <field name="e_examination_lrn" decoration-bf="1"/>
+                    <field name="e_examination_nrn" optional="show" decoration-bf="1"/>
+                    <field name="patient_identifier_id" string="Patient Identifier" optional="hide"/>
+                    <field name="patient_first_name" string="Patient Name"/>
+                    <field name="patient_last_name" string="Surname"/>
+                    <field name="examination_type_id" string="Examination Type" optional="show"/>
+                    <field name="examination_cost_id" optional="show" string="Examination Price"/>
+                    <field name="cost_bearer_id" optional="show" string="Cost Bearer"/>
+                    <field name="patient_health_region_id" string="Patient Health Region" optional="hide"/>
+                    <field name="examination_open_dtm" optional="show"/>
+                    <field name="examination_close_dtm" optional="hide"/>
+                    <field name="secondary_examination" optional="hide"/>
+                    <field name="dr_performing_first_name" optional="show" string="Doctor Performing"/>
+                    <field name="dr_performing_last_name" optional="show" string="Surname"/>
+                    <field name="dr_directing_first_name" optional="show" string="Doctor Directing"/>
+                    <field name="dr_directing_last_name" optional="hide" string="Surname"/>
+                    <field name="date_originating_doc" optional="hide"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Form Views -->
+
+        <record model="ir.ui.view" id="view_trinity_report_form">
+            <field name="name">trinity.report.form</field>
+            <field name="model">trinity.report</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet class="form-body">
+                        <div class="oe_title">
+                            <h1>
+                                Report
+                            </h1>
+                        </div>
+                        <br/>
+                        <group>
+                            <group>
+                                <field name="e_examination_lrn" readonly="1" force_save="1"/>
+                                <field name="e_examination_nrn"/>
+                            </group>
+                        </group>
+                        <br/>
+                        <div class="oe_title">
+                            <h2>Patient</h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="patient_identifier_id"
+                                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="patient_title"/>
+                                <label for="patient_first_name"/>
+                                <div name="name_div" class="d-flex">
+                                    <field name="patient_first_name" placeholder="First"/>
+                                    <span class="oe_inline o_form_label mx-3"/>
+                                    <field name="patient_middle_name" placeholder="Middle"/>
+                                    <span class="oe_inline o_form_label mx-3"/>
+                                    <field name="patient_last_name" placeholder="Last"/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="patient_identifier_type"/>
+                                <field name="patient_birth_date"/>
+                                <field name="patient_health_region_id"
+                                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="patient_health_region_no"/>
+                            </group>
+                            <br/>
+                            <br/>
+                            <group>
+                                <field name="examination_open_dtm"/>
+                                <field name="examination_close_dtm"/>
+                            </group>
+                            <group>
+                                <field name="examination_purpose_id"
+                                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="secondary_examination" widget="radio"/>
+                            </group>
+                            <group>
+                                <field name="cost_bearer_id"
+                                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                            </group>
+                        </group>
+                        <br/>
+                        <div class="oe_title">
+                            <h2>Diagnosis</h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="icd_code" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="additional_description" string="Additional Description"/>
+                                <field name="icd_code1" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="additional_description1" string="Additional Description"/>
+                            </group>
+                            <group>
+                                <field name="icd_code2" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="additional_description2" string="Additional Description"/>
+                                <field name="icd_code3" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="additional_description3" string="Additional Description"/>
+                            </group>
+                            <group>
+                                <field name="medical_history"/>
+                                <field name="objective_condition"/>
+                            </group>
+                            <group>
+                                <field name="assessment_notes"/>
+                                <field name="conclusion"/>
+                            </group>
+                        </group>
+                        <div class="oe_title">
+                            <h2>Doctor Performing the Examination</h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="dr_performing_doctor_id"
+                                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="dr_performing_title"/>
+                                <label for="dr_performing_first_name"/>
+                                <div name="name_div" class="d-flex">
+                                    <field name="dr_performing_first_name" placeholder="First"/>
+                                    <span class="oe_inline o_form_label mx-3"/>
+                                    <field name="dr_performing_middle_name" placeholder="Middle"/>
+                                    <span class="oe_inline o_form_label mx-3"/>
+                                    <field name="dr_performing_last_name" placeholder="Last"/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="dr_performing_qualification_code_id"
+                                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="dr_performing_speciality_id"
+                                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="dr_performing_hospital_no"/>
+                            </group>
+                        </group>
+                        <div class="oe_title">
+                            <h2>Doctor Directing the Patient</h2>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="dr_directing_doctor_id"
+                                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="dr_directing_title"/>
+                                <label for="dr_directing_first_name"/>
+                                <div name="name_div" class="d-flex">
+                                    <field name="dr_directing_first_name" placeholder="First"/>
+                                    <span class="oe_inline o_form_label mx-3"/>
+                                    <field name="dr_directing_middle_name" placeholder="Middle"/>
+                                    <span class="oe_inline o_form_label mx-3"/>
+                                    <field name="dr_directing_last_name" placeholder="Last"/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="dr_directing_qualification_code_id"
+                                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="dr_directing_speciality_id"
+                                       options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                                <field name="dr_directing_hospital_no"/>
+                            </group>
+                        </group>
+                        <br/>
+                        <group>
+                            <group>
+                                <field name="originating_document_no"/>
+                                <field name="date_originating_doc"/>
+                            </group>
+                            <group>
+                                <field name="examination_type_id"/>
+                                <field name="examination_cost_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Search Views -->
+
+        <record model="ir.ui.view" id="view_trinity_report_search">
+            <field name="name">trinity.report.search</field>
+            <field name="model">trinity.report</field>
+            <field name="arch" type="xml">
+                <search string="Report">
+                    <field name="e_examination_lrn"/>
+                    <field name="e_examination_nrn"/>
+                    <field name="patient_identifier_id" string="Patient Identifier"/>
+                    <field name="patient_first_name" string="Patient Name"/>
+                    <field name="dr_performing_first_name" string="Doctor Performing"/>
+                    <field name="dr_directing_first_name" string="Doctor Directing"/>
+                    <field name="originating_document_no"/>
+                    <separator/>
+                    <filter name="secondary_examination" string="Secondary Examination"
+                            domain="[('secondary_examination', '=', 'yes')]"/>
+                    <group expand="1" string="Group By">
+                        <filter name="patient_health_region_id" string="Patient Health Region"
+                                context="{'group_by': 'patient_health_region_id'}"/>
+                        <filter name="examination_purpose" string="Examination Purpose"
+                                context="{'group_by': 'examination_purpose_id'}"/>
+                        <filter name="examination_type_id" string="Examination Type"
+                                context="{'group_by': 'examination_type_id'}"/>
+                        <filter name="examination_cost_id" string="Examination Cost"
+                                context="{'group_by': 'examination_cost_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <!-- Actions to Return Model Views -->
+
+        <record model="ir.actions.act_window" id="action_trinity_report">
+            <field name="name">Reports</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">trinity.report</field>
+            <field name="view_mode">tree,form,pivot</field>
+            <field name="context">{'display_id': True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create Your First Report.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu Items -->
+
+        <menuitem name="Reports" id="menu_report" sequence="10" action="action_trinity_report"/>
+
+    </data>
+</odoo>

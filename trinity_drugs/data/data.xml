@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <data>
+        <record id="measurement_unit_mg" model="measurement.unit">
+            <field name="name">mg</field>
+        </record>
+        <record id="measurement_unit_g" model="measurement.unit">
+            <field name="name">g</field>
+        </record>
+        <record id="measurement_unit_mgml" model="measurement.unit">
+            <field name="name">mg/ml</field>
+        </record>
+        <record id="medicinal_form_tablet" model="medicinal.form">
+            <field name="name">Tablet</field>
+        </record>
+        <record id="medicinal_form_capsule" model="medicinal.form">
+            <field name="name">Capsule</field>
+        </record>
+        <record id="medicinal_form_injection" model="medicinal.form">
+            <field name="name">Injection Solution</field>
+        </record>
+        <record id="medicinal_form_topical" model="medicinal.form">
+            <field name="name">Topical Cream</field>
+        </record>
+        <record id="application_po" model="application.form">
+            <field name="name">p.o.</field>
+        </record>
+        <record id="application_im" model="application.form">
+            <field name="name">i.m.</field>
+        </record>
+        <record id="application_iv" model="application.form">
+            <field name="name">i.v</field>
+        </record>
+        <record id="application_sc" model="application.form">
+            <field name="name">s.c.</field>
+        </record>
+        <record id="application_topical" model="application.form">
+            <field name="name">topical</field>
+        </record>
+    </data>
+</odoo>
