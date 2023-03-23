@@ -10,7 +10,7 @@
     'website': "https://www.fiverr.com/eisaahmed63",
     'category': 'Human Resources',
     'version': '16.0.1',
-    'depends': ['base', 'trinity_patients', 'trinity_doctors_external', 'trinity_doctors', 'trinity_icd_diagnoses', 'trinity_insurance'],
+    'depends': ['base', 'trinity_patients', 'trinity_doctors', 'trinity_doctors_external', 'trinity_icd_diagnoses', 'trinity_insurance', 'trinity_specialty'],
     'data': [
         'security/ir.model.access.csv',
         'data/ir_sequence_data.xml',

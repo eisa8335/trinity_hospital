@@ -10,7 +10,7 @@
     'website': "https://www.fiverr.com/eisaahmed63",
     'category': 'Human Resources',
     'version': '16.0.1',
-    'depends': ['base', 'trinity_doctors', 'trinity_specialty'],
+    'depends': ['base', 'trinity_specialty'],
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',

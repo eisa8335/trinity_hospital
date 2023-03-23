@@ -31,7 +31,7 @@
                     <sheet>
                         <div class="oe_title">
                             <h1>
-                                Doctor
+                                Doctor External
                             </h1>
                         </div>
                         <br/>
@@ -125,7 +125,7 @@
         <!-- Actions to Return Model Views -->
 
         <record model="ir.actions.act_window" id="action_trinity_doctor_external">
-            <field name="name">Doctors</field>
+            <field name="name">Doctors External</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">trinity.doctor.external</field>
             <field name="view_mode">tree,form,pivot,graph</field>

@@ -9,7 +9,7 @@ class TrinitySpeciality(models.Model):
     _description = 'Trinity Speciality'
     _rec_name = 'key'
 
-    key = fields.Char(required=True)
+    key = fields.Char()
     description_en = fields.Text(string='Description (En)')
     description_bg = fields.Text(string='Description (Bg)')
     role_healthcare = fields.Char(string='Role in Healthcare')

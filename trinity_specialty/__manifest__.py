@@ -13,6 +13,9 @@
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',
+        'data/doctor.speciality.csv',
+        'data/qualification.code.csv',
+        'data/trinity.speciality.csv',
         'data/data.xml',
         'views/views.xml',
     ]
